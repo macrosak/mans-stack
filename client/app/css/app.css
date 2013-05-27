@@ -1,0 +1,12 @@
+li.system {
+    color: gray;
+}
+
+li {
+    list-style: none;
+
+}
+
+ul {
+    padding-left: 10px;
+}
