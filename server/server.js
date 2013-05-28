@@ -27,7 +27,8 @@ function Server(db, socket) {
         callback(success);
 
         if (success) {
-            io.sockets.emit('message', composeSystemMessage(server.currentUser + ' has joined the conversation.'));
+            socket.emit('message', composeSystemMessage('Hi ' + server.currentUser + '! Welcome to the chat!'));
+            socket.broadcast.emit('message', composeSystemMessage(server.currentUser + ' has joined the conversation.'));
             db.find({}, {limit: 10, sort:{date: -1}}).toArray(function (err, results) {
                 console.log(results);
                 socket.emit('message', results);
