@@ -51,7 +51,7 @@ angular.module('nsa.services', []).
             };
 
             this.requestPermission = function () {
-                $window.webkitNotifications.requestPermission();
+                $window.webkitNotifications.requestPermission(function(){});
             };
         };
 
